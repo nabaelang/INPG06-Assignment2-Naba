@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <!-- My Css -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Portfolio</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://id.wikipedia.org/wiki/Produk">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://play.google.com/store/apps/details?id=com.threestar.gallery&hl=in&gl=US">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.blogger.com/about/">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://play.google.com/store/apps/details?id=jp.co.wasabiapps.myinventory&hl=in&gl=US">My Inventory</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!--Profile-->
+      <table class="table table-bordered" style="background-color: antiquewhite">
+        <tr>
+          <td>
+            <img src="profile.png" alt="profile" width="200" class="rounded-circle mb-3 me-5 mt-5" />
+          </td>
+          <td class="profil">
+            <h1 id="text-name">Naba Elang Pamulat</h1>
+            <p id="text-role">Web Developer</p>
+            <a href="data.html" class="btn btn-primary border border-dark">Edit</a>
+            <input type="reset" class="btn btn-danger border border-dark" id="resetresume" name="reset" value="Reset" />
+          </td>
+          <td class="data">
+            <p>Availability</p>
+            <p>Usia</p>
+            <p>Lokasi</p>
+            <p>Pengalaman</p>
+            <p>Email</p>
+          </td>
+          <td class="hasil">
+            <p id="text-availability">Full Time</p>
+            <p id="text-umur">20</p>
+            <p id="text-domisili">Tangerang Selatan</p>
+            <p id="text-pengalaman">2</p>
+            <p id="text-email">nabaelangpamulat@gmail.com</p>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Form Isi -->
+    <form action="" class="tabel" onsubmit="handleSubmit(event)" id="form-data">
+        <label for="name">Nama</label>
+        <input type="text" name="Nama" placeholder="Masukan nama anda" size="256" id="input-name" required type="text" />
+        <label for="name">Role</label>
+        <input type="text" name="role" placeholder="Masukan role anda" size="256" id="input-role" required type="text" />
+        <label for="name">Availability</label>
+        <input type="text" name="Availability" placeholder="Masukan availability anda" size="256" id="input-availability" required type="text" />
+        <label for="name">Usia</label>
+        <input type="text" name="Usia" placeholder="Masukan usia anda" size="256" id="input-umur" required type="number" />
+        <label for="name">Lokasi</label>
+        <input type="text" name="Lokasi" placeholder="Masukan lokasi anda" size="256" id="input-domisili" required type="text" />
+        <label for="name">Year Experience</label>
+        <input type="text" name="Exp" placeholder="Masukan year experience anda" size="256" id="input-pengalaman" required type="text" />
+        <label for="name">Email</label>
+        <input type="email" name="Email" placeholder="Masukan email anda" size="256" id="input-email" required type="email" />
+        <a href="index.html"button class="submit" type="submit" id="btn-submit">Submit</a>
+        <input type="reset" class="reset" id="resetresume" name="reset" value="Reset" />
+      </form>
+
+      <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <!-- JS -->
+    <script>
+        var textName = document.getElementById("text-name");
+        var textRole = document.getElementById("text-role");
+        var textAvailability = document.getElementById("text-availability");
+        var textUmur = document.getElementById("text-umur");
+        var textDomisili = document.getElementById("text-domisili");
+        var textPengalaman = document.getElementById("text-pengalaman");
+        var textEmail = document.getElementById("text-email");
+        document.getElementById("input-name").value = textName.innerText;
+        document.getElementById("input-role").value = textRole.innerText;
+        document.getElementById("input-availability").value = textAvailability.innerText;
+        document.getElementById("input-umur").value = textUmur.innerText;
+        document.getElementById("input-domisili").value = textDomisili.innerText;
+        document.getElementById("input-pengalaman").value = textPengalaman.innerText;
+        document.getElementById("input-email").value = textEmail.innerText;
+
+        function handleSubmit(event) {
+        var inputName = document.getElementById("input-name");
+        var inputRole = document.getElementById("input-role");
+        var inputAvailability = document.getElementById("input-availability");
+        var inputUmur = document.getElementById("input-umur");
+        var inputDomisili = document.getElementById("input-domisili");
+        var inputPengalaman = document.getElementById("input-pengalaman");
+        var inputEmail = document.getElementById("input-email");
+        document.getElementById("text-name").innerText = inputName.value;
+        document.getElementById("text-role").innerText = inputRole.value;
+        document.getElementById("text-availability").innerText = inputAvailability.value;
+        document.getElementById("text-umur").innerText = inputUmur.value;
+        document.getElementById("text-domisili").innerText = inputDomisili.value;
+        document.getElementById("text-pengalaman").innerText = inputPengalaman.value;
+        document.getElementById("text-email").innerText = inputEmail.value;
+        event.preventDefault();
+        const resetresume = (e) => {
+          localStorage.removeItem("text-name, text-role, text-availability, text-umur, text-domisili, text-pengalaman, text-email");
+          event.preventDefault();
+        };
+      }
+    </script>
+  </body>
+</html>
